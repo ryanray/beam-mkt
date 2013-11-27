@@ -1,0 +1,51 @@
+header
+  div.container
+    div.row
+      div.col-md-4.col-sm-4
+        div.logo(style="padding:5px;")
+          h1
+            a(href="/")
+              img(src="/img/beam-logo.jpg", alt="Beam Lending", style="width: 210px")
+      div.col-md-5.col-md-offset-3.col-sm-6.col-sm-offset-2
+
+div.navbar.bs-docs-nav(role="banner")
+  div.container
+    div.navbar-header
+      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".bs-navbar-collapse")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+    div.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+      ul.nav.navbar-nav
+        li
+          a(href="/") Home
+        li.dropdown
+          a.dropdown-toggle(href="/home-buying", data-toggle="dropdown") Buy A House
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/first-time-homebuyers") First-time Homebuyers
+        li.dropdown
+          a.dropdown-toggle(href="/home-buying", data-toggle="dropdown") Refinance
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/lower-your-payments") Lower Your Monthly Mortgage Payments
+        li.dropdown
+          a.dropdown-toggle(href="/home-loan-options", data-toggle="dropdown") Loan Options
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/adjustable-rate-mortgages") Adjustable Mortgage Rates
+        li
+          a(href="/mortgage-rates") Rates
+        li.dropdown
+          a.dropdown-toggle(href="/calculators", data-toggle="dropdown") Calculators
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/adjustable-rate-mortgages") Adjustable Mortgage Rates
+        li
+          a(href="/mortgage-rates") About Us
