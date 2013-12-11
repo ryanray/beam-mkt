@@ -1,6 +1,9 @@
 var v = require('../../../lib/jadeValidator.js');
 // var html = 'extends ../layout.jade\ndiv.woot\n  p booya';
 
+//THIS NEEDS TO CHANGE
+var STATIC_DIR = process.cwd() + '/views/static/';
+
 exports.jade = function(req, res){
 
   var jade = req.body.jade;
@@ -18,7 +21,7 @@ exports.jade = function(req, res){
     return false;
   }
 
-  v.validate(jade, {filename: process.cwd() + '/views/' + path}, function(err, isValid){
+  v.validate(jade, {filename: STATIC_DIR + path}, function(err, isValid){
 
     if(err){
       response.errors.push(err);
