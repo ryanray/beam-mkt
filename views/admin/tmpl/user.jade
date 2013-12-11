@@ -1,0 +1,23 @@
+form.form-horizontal(ng-submit="handleSaveUser()", ng-show="AuthorizedUser.isLoggedIn")
+  div.alert.alert-success(ng-show="saveSuccessful")
+    strong Your changes were saved!
+
+  div.alert.alert-error(ng-show="errorMessage")
+    strong {{errorMessage}}
+
+  legend Welcome, {{UserDate.username}}!
+
+  div.control-group
+    label.control-label(for="username") User Name
+    div.controls
+      input#username(type="text", name="username", value="{{UserDate.username}}", maxlength="20", disabled)
+
+  div.control-group
+    label.control-label(for="firstname") First Name
+    div.controls
+      input#firstname(type="text", name="firstname", value="{{UserDate.firstName}}", maxlength="20", required)
+
+  div.control-group
+    label.control-label(for="lastname") Last Name
+    div.controls
+      input#lastname(type="text", name="lastname", value="{{UserDate.lastName}}", maxlength="20", required)

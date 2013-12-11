@@ -31,6 +31,11 @@ module.exports = function(grunt) {
 
         'FED/vendor/custom.js', 
         'FED/src/init.js'
+      ],
+      clientAdmin: [
+        'ADMIN/vendor/angular.js',
+
+        'ADMIN/src/main.js'
       ]
     },
     jade: {
@@ -92,6 +97,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'public/js/lib/site.1.0.0.min.js': '<%= src.client %>',
+          'public/js/admin/main.1.0.0.min.js': '<%= src.clientAdmin %>'
         }
       }
     },
@@ -116,15 +122,19 @@ module.exports = function(grunt) {
       client: {
         files: '<%= src.client %>',
         tasks: ['uglify']
+      },
+      clientAdmin: {
+        files: '<%= src.clientAdmin %>',
+        tasks: ['uglify']
       }
     }
   });
 
   grunt.registerTask('compileCSS', ['less']);
 
-  grunt.registerTask('compileTemplates', ['jade', 'uglify']);
+  // grunt.registerTask('compileTemplates', ['jade', 'uglify']);
 
   grunt.registerTask('compileJS', ['uglify']);
   // Default task.
-  grunt.registerTask('default', ['jshint', 'mochaTest', 'jade', 'uglify', 'less']);
+  grunt.registerTask('default', ['jshint', 'mochaTest', 'uglify', 'less']);
 };

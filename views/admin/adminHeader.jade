@@ -1,0 +1,16 @@
+div.content
+  div.container
+    ol.breadcrumb(ng-controller="BreadcrumbCtrl", ng-show="AuthorizedUser.isLoggedIn")
+      li(ng-repeat="breadcrumb in breadcrumbs.getAll()")
+        a(href="{{breadcrumb.path}}") {{breadcrumb.label}}
+
+      a.pull-right(ng-click="logout()", ng-show="AuthorizedUser.isLoggedIn") Logout
+    div.site-msg(ng-controller="GlobalMsgCtrl")
+      div.alert.alert-success(ng-show="GlobalMessageService.globalSuccessMessage.length")
+        strong Success! 
+        | {{GlobalMessageService.globalSuccessMessage}}
+      div.alert.alert-danger(ng-show="GlobalMessageService.globalErrorMessage.length")
+        strong Error!
+        ul
+          li(ng-repeat="error in GlobalMessageService.globalErrorMessage")
+            | {{error}}

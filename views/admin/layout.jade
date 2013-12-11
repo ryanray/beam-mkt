@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  div(ng-app="admin")
+    div(ng-controller="MainCtrl", ng-model="AuthorizedUser")
+      include adminHeader
+
+      div.content
+        div.container(ng-view)
+          block subContent
+
+block pageSpecificJS
+  script(src="/js/admin/main.1.0.0.min.js")

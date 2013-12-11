@@ -1,0 +1,17 @@
+div(ng-hide="AuthorizedUser.isLoggedIn")
+  form.form-horizontal(ng-submit="handleLogin()")
+    legend Login
+    div.alert.alert-error(ng-show="errorMessage.length")
+      strong {{errorMessage}}
+    div.form-group
+      label.col-sm-2.control-label(for="username") Username
+      div.col-sm-4
+        input#username.form-control(type="text", name="username", ng-model="LoginModel.username", maxlength="20", required)
+    div.form-group
+      label.col-sm-2.control-label(for="password") Password
+      div.col-sm-4
+        input#password.form-control(type="password", name="password", ng-model="LoginModel.password", maxlength="30", required)
+    
+    div.form-group
+      div.col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") Login

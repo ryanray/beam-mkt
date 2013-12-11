@@ -1,0 +1,16 @@
+form.form-horizontal(ng-show="AuthorizedUser.isLoggedIn", ng-submit="handleSubmit()", role="form")
+  div.form-group
+    label.col-sm-2(for="template") Template
+    div.col-sm-10
+      input#template.form-control(type="text", maxlength="255", name="template", ng-model="SingleStaticPage.template", required)
+
+  div.form-group
+    label.col-sm-2(for="jade") Content
+    div.col-sm-10
+      textarea#jade.form-control(rows="15", name="jade", ng-model="SingleStaticPage.jade", required)
+
+  div.form-group
+    div.col-sm-offset-2.col-sm-10
+      button.btn.btn-primary(type="submit") Save
+      button.btn.btn-cancel(type="cancel") Cancel
+

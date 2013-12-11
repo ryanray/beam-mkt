@@ -1,0 +1,19 @@
+table.table.table-striped(ng-show="AuthorizedUser.isLoggedIn")
+  thead
+    tr 
+      th #
+      th Template
+      th Actions
+        button.btn.btn-sm.btn-success.pull-right(ng-click="handleStaticPageNew()")
+          span.glyphicon.glyphicon-plus
+          | &nbsp;New Page
+  tbody
+    tr(ng-repeat="file in StaticPageData.files")
+      td {{$index+1}}
+      td {{file}}
+      td 
+        a(title="Edit Template", ng-click="handleStaticPageEdit()", style="margin-right:5px")
+          span.glyphicon.glyphicon-edit
+        a(title="Delete Template", ng-click="handleStaticPageDelete()")
+          span.glyphicon.glyphicon-trash
+
