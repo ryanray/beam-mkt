@@ -1,1 +1,42 @@
-legend Get Started
+h3.h1(style="font-weight: 300 !important;") Get Started
+p.big.grey Only a few easy steps.
+hr
+
+form#gs-form(role="form", method="POST", style="position:relative;")
+  div.success-msg(style="display:none; z-index:1; position:absolute; top:0; left:0; height: 100%; width: 100%;")
+    div.alert.alert-success(style="height:100%")
+      strong Success!
+      p Your info has been received. A loan specialist will contact you shortly.
+  div.form-group
+    label(for="lio-firstName") First Name
+    input#lio-firstName.form-control(value="", type="text", name="lio-firstName", placeholder="First Name", maxLength="35", required)
+  div.form-group
+    label(for="lio-lastName") Last Name
+    input#lio-lastName.form-control(value="", type="text", name="lio-lastName", placeholder="Last Name", maxLength="35", required)
+  div.form-group
+    label(for="lio-phone") Phone
+    input#lio-phone.form-control(value="", type="text", name="lio-phone", placeholder="Phone Number", maxLength="11", required)
+  div.form-group
+    label(for="lio-email") Email
+    input#lio-email.form-control(value="", type="text", name="lio-email", placeholder="Email", maxLength="35", required)
+
+  div.form-group
+    label(for="lio-street") Street
+    input#lio-street.form-control(value="", type="text", name="lio-street", placeholder="Street", maxLength="75", required)
+
+  div.form-group
+    label(for="lio-city") City
+    input#lio-city.form-control(value="", type="text", name="lio-city", placeholder="City", maxLength="50", required)
+
+  div.form-group
+    label(for="lio-state") State
+    select#lio-state.form-control(name="lio-state", placeholder="State", required)
+      option(value="")
+      option(value="UT") Utah
+
+  div.form-group
+    label(for="lio-zip") Zip Code
+    input#lio-zip.form-control(value="", type="text", name="lio-zip", placeholder="Zip Code", maxLength="5", required)
+
+  div.form-actions
+      button.btn.btn-primary(type="submit") Get Started

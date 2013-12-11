@@ -141,8 +141,6 @@ app.all('/*', function(req, res){
   //match all /admin paths except /admin/login
   var isAuthRequired = /^\/admin(?!\/login|\/tmpl)/ig.test(path);
 
-  console.log('IS AUTH REQUIRED!', isAuthRequired);
-
   if(isAuthRequired){
     auth.isAuthenticated(req, res, function(err, isAuthenticated){
       console.log('IS isAuthenticated:', isAuthenticated);

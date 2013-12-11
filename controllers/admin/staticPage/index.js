@@ -138,6 +138,8 @@ var updateStaticPage = function(fileName, content, next){
   var parsedFileName = fileUtils.serverFriendlyName(fileName);
   var viewPath = fileUtils.viewPath(parsedFileName);
 
+  console.log('VIEWPATH:::', viewPath);
+
   fileUtils.exists( viewPath, function(){
     //trueNext
     // overwrite file!
@@ -203,7 +205,7 @@ exports.update = function(req, res){
 
   //TODO: check for required params
 
-  updateStaticPage(fileUtils.serverFriendlyName(templateName), content, function(err, fileContent){
+  updateStaticPage(templateName, content, function(err, fileContent){
     if(err){
       res.send(createErrorResponse(null, err));
     }
